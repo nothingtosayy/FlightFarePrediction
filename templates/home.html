@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Price Prediction</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body style="background: url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1174&q=80); background-size: 100% 100%">
+<center>
+{% block content %}
+    <form action="result/" method="post">
+    {% csrf_token %}
+
+<br>
+    <br>
+        <!--source location-->
+    <p style="color: black">Select Source Location</p>
+    <select name="source" id="source" required="required" style="width: 150px;">
+        <option value="Chennai">Chennai</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Cochin">Cochin</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+    </select>
+        <br>
+    <br>
+        <!--destination-->
+    <p style="color: black">Enter Destination Location</p>
+    <select name="destination" id="destination" required="required" style="width: 150px;">
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Cochin">Cochin</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+    </select>
+        <br>
+    <br>
+        <!--Departure-->
+    <p style="color: black">Departure Date</p>
+<input type="datetime-local" name="depdate" placeholder="Date of Journey"><br>
+    <br>
+        <!--Arrival-->
+<p style="color: black">Arrival Date</p>
+        <input type="datetime-local" name="arrdate" placeholder="Arrival Date"><br>
+        <br>
+
+        <!--total stops-->
+        <p style="color: black">Select No of Stops</p>
+        <select name="stops" id="stops" required="required" style="width: 100px;">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <br>
+        <br>
+
+        <!--Airline-->
+    <p style="color: black">Select Airline</p>
+    <select name="airline" id="airline" required="required">
+     <option value="Air India">Air India</option>
+    <option value="GoAir">GoAir</option>
+    <option value="IndiGo">IndiGo</option>
+    <option value="Jet Airways">Jet Airways</option>
+    <option value="Jet Airways Business">Jet Airways Business</option>
+    <option value="Multiple carriers">Multiple carriers</option>
+    <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+    <option value="SpiceJet">SpiceJet</option>
+    <option value="TruJet">TruJet</option>
+    <option value="Vistara">Vistara</option>
+    <option value="Vistara Premium economy">Vistara Premium economy</option>
+    </select>
+        <br>
+        <br>
+    <input type="submit" value="Get Price">
+    </form>
+
+    <br>
+    <br>
+
+    <b><p style="color: azure">© Songala Rohith Kumar</p></b>
+<br>
+    <br>
+</center>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>
